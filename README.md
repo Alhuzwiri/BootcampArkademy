@@ -23,3 +23,6 @@ gambar terakhir merupakan hasil query dari ketiga tabel :
 Select h.name, k.name, n.name from Nama as n inner join Kategori as k on n.id = k.id inner join Hobi as h on h.id_category = k.id
 ![query](https://user-images.githubusercontent.com/11330262/60383484-97dd9380-9a9b-11e9-942d-9805208e3635.png)
 
+form inpit
+
+![website](https://user-images.githubusercontent.com/11330262/60384390-39b6ad80-9aa7-11e9-8f6b-4937f3ab5030.png)
