@@ -21,36 +21,32 @@
 
 
 //2.Validasi => menggunakan REGEX (https://regex101.com/)
--Name
-/[a-z]{5,9}/ (‘alhuz’)
+-Name /[a-z]{5,9}/ (‘alhuz’)
 
-email
+function validateEmail(name) {
+  var re = /[a-z]{5,9}/;
+  return re.test(name);
+}
+
+-email /^\w+[@]+\w{0,}.\w{2}$/ (‘alhuz@gamail.uk’)
+
  function validateEmail(email) {
   var re = /^\w+[@]+\w{0,}.\w{2}$/;
   return re.test(email);
 }
-function validate() {
-  var $result = $("#result");
-  var email = $("#email").val();
-  $result.text("");
+-Phone number /^[+]62*\d{8,15}/(+62838453645)
 
-  if (validateEmail(email)) {
-    $result.text(email + " is valid :)");
-    $result.css("color", "green");
-  } else {
-    $result.text(email + " is not valid :(");
-    $result.css("color", "red");
+function validateEmail(phone) {
+  var re = /^[+]62*\d{8,15}/;
+  return re.test(phone);
   }
-  return false;
-}
+-Password /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8}$/ (‘ALuzw@9i’)
 
-$("#validate").on("click", validate);
+function validateEmail(pass) {
+  var re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8}$/;
+  return re.test(pass);
+  }
 
--Phone number
-/^[+]62*\d{8,15}/
-
--Password
-/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8}$/ (‘ALuzw@9i’)
 
 //3.Segitiga terbalik dengan bahasa C
 #include <stdio.h>
