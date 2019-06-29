@@ -21,16 +21,35 @@
 
 
 //2.Validasi => menggunakan REGEX (https://regex101.com/)
-Name
+-Name
 /[a-z]{5,9}/ (‘alhuz’)
 
 email
-/^\w+\d+[@]+\w{0,}.\w{2}/ (‘alhuz90@gamail.uk’)
+ function validateEmail(email) {
+  var re = /^\w+[@]+\w{0,}.\w{2}$/;
+  return re.test(email);
+}
+function validate() {
+  var $result = $("#result");
+  var email = $("#email").val();
+  $result.text("");
 
-Phone number
+  if (validateEmail(email)) {
+    $result.text(email + " is valid :)");
+    $result.css("color", "green");
+  } else {
+    $result.text(email + " is not valid :(");
+    $result.css("color", "red");
+  }
+  return false;
+}
+
+$("#validate").on("click", validate);
+
+-Phone number
 /^[+]62*\d{8,15}/
 
-Password
+-Password
 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8}$/ (‘ALuzw@9i’)
 
 //3.Segitiga terbalik dengan bahasa C
