@@ -1,0 +1,107 @@
+//1.JSON FORMAT (BOIDATA)
+
+{
+   "name":"Alfi Alhuzwiri Syam",
+   "age":"22",
+   "address":"04 Karya Timur Street Malang East Java",
+   "hobbies":"[Robotic, hiking, programing,etc]",
+   "is_married":"false",
+   "list_school":{
+      "name":"state polytechnic of malang",
+      "year_in":"2016",
+      "year_out":"2019",
+      "major":"Telecommunication Engineering"
+   },
+   "skills":{
+      "skill_name":"Programing",
+      "level":"advanced"
+   },
+   "interest_in_coding":"true"
+}
+
+
+//2.Validasi => menggunakan REGEX (https://regex101.com/)
+Name
+/[a-z]{5,9}/ (‘alhuz’)
+
+email
+/^\w+\d+[@]+\w{0,}.\w{2}/ (‘alhuz90@gamail.uk’)
+
+Phone number
+/^[+]62*\d{8,15}/
+
+Password
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8}$/ (‘ALuzw@9i’)
+
+//3.Segitiga terbalik dengan bahasa C
+#include <stdio.h>
+int main()
+{
+    int i, j; 
+    int rows=6;
+    for(i=1; i<=rows; i++)
+    {
+        
+        for(j=1; j<i; j++)
+        {
+            printf(" ");
+        }
+
+       
+        for(j=1; j<=(rows*2 - (2*i-1)); j++)
+        {
+           
+            if(i==1 || j==1 || j==(rows*2 - (2*i - 1)))
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }  
+        printf("\n");
+    }
+    return 0;
+}
+
+//5.Mengurutkan Bilangan dengan C++
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int jumlah, asc;
+
+main(){
+    cout << " Input jumlah bilangan : ";
+    cin >> jumlah;
+
+    int nilai[jumlah];
+
+    for(int i=0; i<jumlah; i++){
+        cout << "Nilai " << (i+1) << " : ";
+        cin >> nilai[i];
+    }
+
+    for(int c=1;c<jumlah;c++)
+    {
+        for(int d=0;d<jumlah-c;d++)
+        {
+            if(nilai[d] > nilai[d+1])
+            {
+                asc=nilai[d];
+                nilai[d]=nilai[d+1];
+                nilai[d+1]=asc;
+            }
+        }
+    }
+
+    cout << endl << "Hasil Pengurutan Adalah";
+    for(int i=0;i<jumlah;i++)
+    {
+        cout << " " << nilai[i];
+    }
+    cout << endl;
+    getch();
+    return 0;
+}
